@@ -12,11 +12,12 @@ int main() {
   // Área para exibição dos dados da cidade
     char estado, estado2;
     char codigo[20], cidade[20], codigo2[20], cidade2[20];
-    int populacao, turisticos, populacao2, turisticos2;
-    float pib, area, pib2, area2;
+    int  turisticos, turisticos2;
+    float pib, area, pib2, area2, denspop, denspop2, percap, percap2, populacao2, populacao;
+    
 
     printf("Digite cidade: ");
-    scanf("%s", cidade);
+    fgets(cidade, sizeof(cidade), stdin);
 
     printf("Qual estado fica essa cidade (A-H): ");
     scanf(" %c", &estado);
@@ -25,7 +26,7 @@ int main() {
     scanf("%s", codigo);
 
     printf("Qual a populaçao dessa cidade: ");
-    scanf("%d", &populacao);
+    scanf("%f", &populacao);
 
     printf("Quantos pontos turisticos tem nessa cidade: ");
     scanf("%d", &turisticos);
@@ -36,9 +37,14 @@ int main() {
     printf("Qual o tamanho dessa cidade (KM²): ");
     scanf("%f", &area);
 
+  
+
+    
+
+    while (getchar() != '\n');
 
     printf("Digite cidade: ");
-    scanf("%s", cidade2);
+    fgets(cidade2, sizeof(cidade2), stdin);
 
     printf("Qual estado fica essa cidade (A-H): ");
     scanf(" %c", &estado2);
@@ -47,7 +53,7 @@ int main() {
     scanf("%s", codigo2);
 
     printf("Qual a populaçao dessa cidade: ");
-    scanf("%d", &populacao2);
+    scanf("%f", &populacao2);
 
     printf("Quantos pontos turisticos tem nessa cidade: ");
     scanf("%d", &turisticos2);
@@ -58,24 +64,42 @@ int main() {
     printf("Qual o tamanho dessa cidade (KM²): ");
     scanf("%f", &area2);
 
+    percap = pib / populacao;
+
+    percap2 = pib2 / populacao2;
+
+    denspop = populacao / area;
+
+    denspop2 = populacao2 / area2;
+
     printf("\n\n");
-    printf("CARTA 1:\n");
+    printf("*** CARTA 1***\n");
     printf("ESTADO: %c\n", estado);
     printf("CODIGO: %s\n", codigo);
     printf("NOME DA CIDADE: %s\n", cidade);
-    printf("POPULAÇÃO: %d\n", populacao);
-    printf("ÁREA: %f\n", area);
-    printf("PIB: %f\n", pib);
-    printf("NÚMEROS DE PONTOS TURÌSTICOS: %d\n\n", turisticos);
+    printf("POPULAÇÃO: %f\n", populacao);
+    printf("ÁREA: %.2f km² \n ", area);
+    printf("PIB: %.2f reais \n  ", pib);
+    printf("NÚMEROS DE PONTOS TURÌSTICOS: %d\n", turisticos);
+    printf("DENSIDADE POPULACIONAL %.2f hab/km² \n ", denspop);
+    printf("PIB PER CAPITA: %.2f reais \n  ", percap);
 
     printf("\n\n");
-    printf("CARTA 2:\n");
+    printf("*** CARTA 2***\n");
     printf("ESTADO: %c\n", estado2);
     printf("CODIGO: %s\n", codigo2);
     printf("NOME DA CIDADE: %s\n", cidade2);
-    printf("POPULAÇÃO: %d\n", populacao2);
-    printf("ÁREA: %f\n", area2);
-    printf("PIB: %f\n", pib2);
-    printf("NÚMEROS DE PONTOS TURÌSTICOS: %d\n\n", turisticos2);
+    printf("POPULAÇÃO: %f\n", populacao2);
+    printf("ÁREA: %.2f km² \n ", area2);
+    printf("PIB: %.2f reais \n  ", pib2);
+    printf("NÚMEROS DE PONTOS TURÌSTICOS: %d\n", turisticos2);
+    printf("DENSIDADE POPULACIONAL %.2f hab/km² \n ", denspop2);
+    printf("PIB PER CAPITA: %.2f reais \n ", percap2);
 return 0;
 } 
+
+
+    
+
+    
+
