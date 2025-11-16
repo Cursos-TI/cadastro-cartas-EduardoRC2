@@ -1,0 +1,6 @@
+#Para utilizar o formatador no VS Code utilize o atalho : Shift + Alt + F
+
+BasedOnStyle: Google
+IndentWidth: 4
+ColumnLimit: 100
+
